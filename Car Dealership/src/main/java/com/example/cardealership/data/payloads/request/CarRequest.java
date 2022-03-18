@@ -53,7 +53,7 @@ public class CarRequest {
         this.type = type;
     }
     public double getPrice() {
-        return price
+        return price;
     }
     public void setPrice(double price) {
         this.price = price;
