@@ -4,9 +4,7 @@ import com.example.cardealership.data.models.Car;
 import com.example.cardealership.data.payloads.request.CarRequest;
 import com.example.cardealership.data.payloads.response.MessageResponse;
 import com.example.cardealership.data.repository.CarRepository;
-import com.example.cardealership.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -57,6 +55,12 @@ public Car getASingleCar(Integer carId) throws ResourceNotFoundException{
 public List<Car> getAllCar() {
     return carRepository.findAll();
     }
+
+    @Override
+    public Car getCarById(long carId) {
+        return null;
+    }
+
 }
 @Override
 public void deleteCar(Integer carId) throws ResourceNotFoundException {

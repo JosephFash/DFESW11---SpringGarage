@@ -15,4 +15,7 @@ public interface CarService {
     void deleteCar(Integer CarId);
     Car getASingleCar(Integer CarId);
     List<Car> getAllCar();
+    Car getCarById(long carId);
+
+    Optional<Car> updateCar(string CarId);
 }

@@ -1,7 +1,15 @@
 package com.example.cardealership.data.models;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.util.Objects;
+
+@Builder
+@Getter
+@Setter
+@AllArgsConstructor
+
 
 @Entity
 public class Car {
@@ -12,7 +20,7 @@ public class Car {
     private String model;
     private String registration;
     private String type;
-    private double price;
+    private String price;
     @Enumerated(EnumType.STRING)
     private Location location;
 
@@ -47,7 +55,7 @@ public class Car {
     public void setType(String type) {
         this.type = type;
     }
-    public double getPrice() {
+    public String getPrice() {
         return price;
     }
     public void setPrice(double price) {
@@ -79,7 +87,7 @@ public class Car {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Car car = (Car) o;
-        return Double.compare(car.price, price) == 0 && Objects.equals(id, car.id) && Objects.equals(manufacturer, car.manufacturer) && Objects.equals(model, car.model) && Objects.equals(registration, car.registration) && Objects.equals(type, car.type) && location == car.location;
+        return CharSequence.compare(price, car.price) == 0 && Objects.equals(id, car.id) && Objects.equals(manufacturer, car.manufacturer) && Objects.equals(model, car.model) && Objects.equals(registration, car.registration) && Objects.equals(type, car.type) && location == car.location;
     }
 
     @Override
